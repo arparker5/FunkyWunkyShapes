@@ -64,7 +64,7 @@ int main() {
     std::ofstream myfile;
     myfile.open("PostScript.ps", std::ofstream::out | std::ofstream::trunc);//Clears the file contents
     myfile.close();
-
+/*
     Scaled R2(std::make_unique<Square>(20), 3, 3);
     R2.intoPS();
     Polygon X(8, 50);
@@ -74,9 +74,11 @@ int main() {
 
     Triangle T(10);
     T.intoPS();
+*/
+    std::vector<std::unique_ptr<Shape>> vec;
+    vec.push_back(std::make_unique<Circle>(10));
 
-    std::vector<std::unique_ptr<Shape>> v;
-    v.push_back(std::make_unique<Circle>(10));
-
-    //Layered(v);
+    Vertical V(vec);
+    V.Template::intoPS();       //Layered, Vertical, and Horizontal still have bugs, so only a blank page is printed.
+                                //The template design pattern is still demonstrated with the template class.
 }

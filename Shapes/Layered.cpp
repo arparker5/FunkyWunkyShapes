@@ -25,19 +25,6 @@ Layered::Layered(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::
     _height = height;
 
 }
-void Layered::intoPS() {
-    std::fstream myOut;
-    return this->intoPS(myOut, "PostScript.ps");
-}
-
-void Layered::intoPS(const std::string &fileName) {
-    std::fstream myOut;
-    return this->intoPS(myOut, fileName);
-}
-
-void Layered::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScript.ps");
-}
 
 void Layered::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName, std::ios::app);
@@ -50,7 +37,6 @@ void Layered::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.close();
 }
 
-
 double Layered::getWidth(){
     return _width;
 }
@@ -58,5 +44,3 @@ double Layered::getWidth(){
 double Layered::getHeight(){
     return _height;
 }
-
-

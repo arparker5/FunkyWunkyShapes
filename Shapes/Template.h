@@ -7,17 +7,19 @@
 
 #include <string>
 #include <utility>
+#include <memory>
+#include <vector>
+#include "Shape.h"
 
 class Template {
 public:
     virtual ~Template();
-    virtual void intoPS() = 0;
-    virtual void intoPS(const std::string & fileName) = 0;
-    virtual void intoPS(std::fstream & fileStream) = 0;
+    void intoPS();
+    void intoPS(const std::string & fileName);
+    void intoPS(std::fstream & fileStream);
     virtual void intoPS(std::fstream & fileStream, const std::string & fileName) = 0;
     virtual double getWidth() = 0;
     virtual double getHeight() = 0;
-    virtual std::pair<double,double> getCenter() = 0;
 };
 
 

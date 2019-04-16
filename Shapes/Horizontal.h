@@ -6,19 +6,18 @@
 #define FUNKYWUNKYSHAPES_HORIZONTAL_H
 
 #include "Shape.h"
+#include "Template.h"
 #include <vector>
 #include <string>
 #include <memory>
 
-class Horizontal : public Shape{
+class Horizontal : public Template{
 public:
     explicit Horizontal(std::vector<std::unique_ptr<Shape>> & myShapes);
-    void intoPS() override;
-    void intoPS(const std::string & fileName) override;
-    void intoPS(std::fstream & fileStream) override;
     void intoPS(std::fstream & fileStream, const std::string & fileName) override;
     double getWidth() override;
     double getHeight() override;
+
 private:
     double _width;
     double _height;

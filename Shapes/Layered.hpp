@@ -11,19 +11,18 @@
 
 
 #include "Shape.h"
+#include "Template.h"
 #include <string>
 #include <memory>
 #include <vector>
 
-class Layered : public Shape{
+class Layered : public Template{
 public:
     explicit Layered(std::vector<std::unique_ptr<Shape>> & myShapes);
-    void intoPS() override;
-    void intoPS(const std::string & fileName) override;
-    void intoPS(std::fstream & fileStream) override;
     void intoPS(std::fstream & fileStream, const std::string & fileName) override;
     double getWidth() override;
     double getHeight() override;
+
 private:
     double _width;
     double _height;

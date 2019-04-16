@@ -6,19 +6,18 @@
 #define FUNKYWUNKYSHAPES_VERTICAL_H
 
 #include "Shape.h"
+#include "Template.h"
 #include <vector>
 #include <string>
 #include <memory>
 
-class Vertical : public Shape{
+class Vertical : public Template{
 public:
     explicit Vertical(std::vector<std::unique_ptr<Shape>> & myShapes);
-    void intoPS() override;
-    void intoPS(const std::string & fileName) override;
-    void intoPS(std::fstream & fileStream) override;
     void intoPS(std::fstream & fileStream, const std::string & fileName) override;
     double getWidth() override;
     double getHeight() override;
+
 private:
     double _width;
     double _height;
