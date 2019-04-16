@@ -15,7 +15,7 @@
 #include <memory>
 #include <vector>
 
-class Layered : public Shape{
+class Layered : public CRTPTemplate<Layered>{
 public:
     explicit Layered(std::vector<std::unique_ptr<Shape>> & myShapes);
     void intoPS() override;

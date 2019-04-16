@@ -10,7 +10,7 @@
 #include <string>
 #include <memory>
 
-class Horizontal : public Shape{
+class Horizontal : public CRTPTemplate<Horizontal>{
 public:
     explicit Horizontal(std::vector<std::unique_ptr<Shape>> & myShapes);
     void intoPS() override;
