@@ -9,6 +9,7 @@
 #include<fstream>
 #include<string>
 #include <iostream>
+#include <vector>
 #include "Shapes/Shape.h"
 #include "Shapes/Circle.h"
 #include "Shapes/Polygon.hpp"
@@ -19,6 +20,9 @@
 #include "Shapes/Spacer.h"
 #include "Shapes/Scaled.h"
 #include "Shapes/Smiley.h"
+#include "Shapes/Layered.hpp"
+#include "Shapes/Horizontal.h"
+#include "Shapes/Vertical.h"
 #include "catch.hpp"
 
 /*
@@ -71,5 +75,8 @@ int main() {
     Triangle T(10);
     T.intoPS();
 
+    std::vector<std::unique_ptr<Shape>> v;
+    v.push_back(std::make_unique<Circle>(10));
 
+    //Layered(v);
 }

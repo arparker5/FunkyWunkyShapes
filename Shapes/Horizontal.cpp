@@ -37,6 +37,8 @@ void Horizontal::intoPS(std::fstream &fileStream) {
     return this->intoPS(fileStream, "PostScript.ps");
 }
 
+
+
 void Horizontal::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName, std::ios::app);
     fileStream << "gsave\n";
